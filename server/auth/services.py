@@ -62,7 +62,12 @@ def google_get_access_token(*, code: str, redirect_uri: str) -> str:
         # 'grant_type': 'authorization_code'
     }
 
-    response = requests.post(GOOGLE_ACCESS_TOKEN_OBTAIN_URL, data=data)
+    headers = {
+        'content-type': "application/x-www-form-urlencoded",
+        'cache-control': "no-cache",
+    }
+
+    response = requests.post(GOOGLE_ACCESS_TOKEN_OBTAIN_URL, data=data, headers=headers)
     print(data)
     print(response.json())
     if not response.ok:
