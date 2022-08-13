@@ -34,10 +34,8 @@ SECRET_KEY = env.str('DJANGO_SECRET_KEY', default=get_random_secret_key())
 DEBUG = env.bool('DEBUG', default=True)
 
 # BASE_BACKEND_URL = env.str('DJANGO_BASE_BACKEND_URL', default='http://localhost:8000')
-# BASE_BACKEND_URL = env.str('DJANGO_BASE_BACKEND_URL', default='https://mohammedhijje.online')
-# BASE_FRONTEND_URL = env.str('DJANGO_BASE_FRONTEND_URL', default='http://localhost:3000')
-BASE_BACKEND_URL = '425506362437-au246podcdahg12gv179btpdditukidk.apps.googleusercontent.com'
-BASE_FRONTEND_URL = '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'
+BASE_BACKEND_URL = env.str('DJANGO_BASE_BACKEND_URL', default='https://mohammedhijje.online')
+BASE_FRONTEND_URL = env.str('DJANGO_BASE_FRONTEND_URL', default='http://localhost:3000')
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['localhost', '.herokuapp.com', 'mohammedhijje.online', 'localhost:3000'])
 
@@ -173,8 +171,10 @@ CORS_ORIGIN_WHITELIST = env.list(
 
 
 # Google OAuth2 settings
-GOOGLE_OAUTH2_CLIENT_ID = env.str('DJANGO_GOOGLE_OAUTH2_CLIENT_ID')
-GOOGLE_OAUTH2_CLIENT_SECRET = env.str('DJANGO_GOOGLE_OAUTH2_CLIENT_SECRET')
+# GOOGLE_OAUTH2_CLIENT_ID = env.str('DJANGO_GOOGLE_OAUTH2_CLIENT_ID')
+# GOOGLE_OAUTH2_CLIENT_SECRET = env.str('DJANGO_GOOGLE_OAUTH2_CLIENT_SECRET')
+GOOGLE_OAUTH2_CLIENT_ID = '425506362437-au246podcdahg12gv179btpdditukidk.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = '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'
 
 
 # Heroku
